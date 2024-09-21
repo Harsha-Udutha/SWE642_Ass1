@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMU - CS Department Survey</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="gmu-logo.jpg">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="gm-header text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-1">
+                    <img src="gmu-logo.jpg" alt="GMU Logo" class="header-logo">
+                </div>
+                <div class="col-md-5 header-text">
+                    <h1>George Mason University</h1>
+                    <h5>Computer Science Department Survey</h5>
+                </div>
+            </div>
+        </div>
+        <button id="darkModeToggle" class="btn gm-darkmode-btn" style="margin-left: 15px;">Dark Mode</button>
+    </header>
+
+    <!-- Survey Form Section -->
+    <div class="container mb-5">
+        <h2>We hope you enjoyed your visit to our campus! Could you please take a moment to fill out this survey?</h2>
+        <h3 class="mt-4">Survey Form:</h3>
+        <form action="#" method="POST">
+
+            <div class="mb-3">
+                <label for="netID" class="form-label">GMU NetID <span class="text-danger">*</span></label>
+                <input type="text" id="netID" name="netID" class="form-control" pattern="^(?![0-9]+$)[a-zA-Z0-9]+$" title="NetID must contain letters and numbers, with no spaces, and cannot be only numbers" required autocomplete="on" autofocus placeholder="Eg: hudutha">
+            </div>
+
+            <div class="mb-3">
+                <label for="address" class="form-label">Street Address <span class="text-danger">*</span></label>
+                <input type="text" id="address" name="address" class="form-control" required autocomplete="address-level1" placeholder="Eg: 26 stardew valley">
+            </div>
+
+            <div class="mb-3">
+                <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+                <input type="text" id="city" name="city" class="form-control" pattern="^[A-Za-z\s]+$" title="City name must contain only letters and spaces" required autocomplete="city" placeholder="Eg: ConcernedApe">
+            </div>
+
+            <div class="mb-3">
+                <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                <select id="state" name="state" class="form-select" required>
+                    <option value="" disabled selected>Select your state</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="zip" class="form-label">ZIP Code <span class="text-danger">*</span></label>
+                <input type="text" id="zip" name="zip" class="form-control" pattern="[0-9]{5}" title="Five digit zip code" required autocomplete="postal-code" placeholder="Eg: 90001">
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Telephone Number <span class="text-danger">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" pattern="\d{3}[-.\s]?\d{3}[-.\s]?\d{4}" title="Phone number format: 123-456-7890 or 123.456.7890" required autocomplete="phone" placeholder="Eg: 123-456-7890">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@example.com)" required autocomplete="email" placeholder="Eg: hudutha@gmu.edu">
+            </div>
+
+            <div class="mb-3">
+                <label for="url" class="form-label">Website URL <span class="text-danger">*</span></label>
+                <input type="url" id="url" name="url" class="form-control" required autocomplete="url" placeholder="Eg: https://www.gmu.edu/">
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Date of Survey <span class="text-danger">*</span></label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+
+            <h3>What did you like most about the campus? <span class="text-danger">*</span></h3>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="students" id="students">
+                    <label class="form-check-label" for="students">Students</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="location" id="location">
+                    <label class="form-check-label" for="location">Location</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="campus" id="campus">
+                    <label class="form-check-label" for="campus">Campus</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="atmosphere" id="atmosphere">
+                    <label class="form-check-label" for="atmosphere">Atmosphere</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="dorm-rooms" id="dorm-rooms">
+                    <label class="form-check-label" for="dorm-rooms">Dorm Rooms</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="sports" id="sports">
+                    <label class="form-check-label" for="sports">Sports</label>
+                </div>
+            </div>
+
+            <h3>How did you become interested in the university? <span class="text-danger">*</span></h3>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="interest" value="friends" id="friends" required>
+                    <label class="form-check-label" for="friends">Friends</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="interest" value="television" id="television" required>
+                    <label class="form-check-label" for="television">Television</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="interest" value="social" id="social" required>
+                    <label class="form-check-label" for="social">Social Media</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="interest" value="internet" id="internet" required>
+                    <label class="form-check-label" for="internet">Internet</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="interest" value="other" id="other" required>
+                    <label class="form-check-label" for="other">Other (please specify):</label>
+                    <input type="text" id="other-text" name="other-text" class="form-control" maxlength="100" placeholder="Max 100 characters" disabled>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="comments" class="form-label">Additional Comments</label>
+                <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Enter any additional comments or suggestions here..."></textarea>
+            </div>
+
+            <h3>Expected High School Graduation Month? <span class="text-danger">*</span></h3>
+            <div class="mb-3">
+                <label for="graduation-month" class="form-label">Select Month:</label>
+                <input list="months" id="graduation-month" name="graduation-month" class="form-control" required>
+                <datalist id="months">
+                    <option value="January"></option>
+                    <option value="February"></option>
+                    <option value="March"></option>
+                    <option value="April"></option>
+                    <option value="May"></option>
+                    <option value="June"></option>
+                    <option value="July"></option>
+                    <option value="August"></option>
+                    <option value="September"></option>
+                    <option value="October"></option>
+                    <option value="November"></option>
+                    <option value="December"></option>
+                </datalist>
+            </div>
+
+            <div class="mb-3">
+                <label for="graduation-year" class="form-label">Graduation Year:</label>
+                <input type="number" id="graduation-year" name="graduation-year" class="form-control" min="1900" max="2100" required placeholder="YYYY">
+            </div>
+
+            <h3>How likely are you to recommend this school to other prospective students? <span class="text-danger">*</span></h3>
+            <div class="mb-3">
+                <label for="recommendation" class="form-label">You would be</label>
+                <select id="recommendation" name="recommendation" class="form-select" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="very-likely">Very Likely</option>
+                    <option value="likely">Likely</option>
+                    <option value="unlikely">Unlikely</option>
+                </select>
+                <label for="recommendation">Recommending this school to others.</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="gm-footer text-center mt-5">
+        <p>&copy; 2024 George Mason University | Computer Science Department</p>
+        <p>Unofficial Page by Harsha Udutha</p>
+    </footer>
+
+    <script>
+        // Get radio buttons and the other text box
+        const otherRadio = document.getElementById('other');
+        const otherTextBox = document.getElementById('other-text');
+        const radioButtons = document.querySelectorAll('input[name="interest"]');
+        const form = document.querySelector('form');
+    
+        // Add event listener to the radio buttons to enable/disable the "Other" text box
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (otherRadio.checked) {
+                    otherTextBox.disabled = false;  // Enable text box
+                } else {
+                    otherTextBox.disabled = true;   // Disable text box
+                    otherTextBox.value = '';        // Clear text box
+                }
+            });
+        });
+    
+        // Add event listener to the form to validate the "Other" field before submission
+        form.addEventListener('submit', function(event) {
+            if (otherRadio.checked && otherTextBox.value.trim() === '') {
+                // If "Other" is selected but no text is entered, prevent form submission
+                event.preventDefault();
+                alert('Please specify how you became interested in the university if you selected "Other."');
+            }
+        });
+    </script>
+
+<script src="darkmode.js"></script>
+
+</body>
+</html>
