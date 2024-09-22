@@ -34,29 +34,34 @@
         <button id="darkModeToggle" class="btn gm-darkmode-btn" style="margin-left: 15px;">Dark Mode</button>
     </header>
 
-    <!-- Survey Form Section -->
+    <!-- Survey from using bootstrap -->
     <div class="container mb-5">
         <h2>We hope you enjoyed your visit to our campus! Could you please take a moment to fill out this survey?</h2>
         <h3 class="mt-4">Survey Form:</h3>
-        <form action="#" method="POST">
-
+        <form action="CSinfo.html" method="GET">
+            <!-- elements have autocomplete and placeholder attributes for name, netid, address and phone -->
             <div class="mb-3">
-                <label for="netID" class="form-label">GMU NetID <span class="text-danger">*</span></label>
-                <input type="text" id="netID" name="netID" class="form-control" pattern="^(?![0-9]+$)[a-zA-Z0-9]+$" title="NetID must contain letters and numbers, with no spaces, and cannot be only numbers" required autocomplete="on" autofocus placeholder="Eg: hudutha">
+                <label for="name" class="form-label">Full Name:<span class="text-danger">*</span></label>
+                <input type="text" id="name" name="name" class="form-control" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$" title="Please enter your full name, with no numbers" autocomplete="name" required autofocus placeholder="Eg: Harsha Udutha">
             </div>
 
             <div class="mb-3">
-                <label for="address" class="form-label">Street Address <span class="text-danger">*</span></label>
+                <label for="netID" class="form-label">GMU NetID:</label>
+                <input type="text" id="netID" name="netID" class="form-control" pattern="^(?![0-9]+$)[a-zA-Z0-9]+$" title="NetID must contain letters and numbers, with no spaces, and cannot be only numbers" autocomplete="on" placeholder="Eg: hudutha">
+            </div>
+
+            <div class="mb-3">
+                <label for="address" class="form-label">Street Address:<span class="text-danger">*</span></label>
                 <input type="text" id="address" name="address" class="form-control" required autocomplete="address-level1" placeholder="Eg: 26 stardew valley">
             </div>
 
             <div class="mb-3">
-                <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+                <label for="city" class="form-label">City:<span class="text-danger">*</span></label>
                 <input type="text" id="city" name="city" class="form-control" pattern="^[A-Za-z\s]+$" title="City name must contain only letters and spaces" required autocomplete="city" placeholder="Eg: ConcernedApe">
             </div>
 
             <div class="mb-3">
-                <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                <label for="state" class="form-label">State:<span class="text-danger">*</span></label>
                 <select id="state" name="state" class="form-select" required>
                     <option value="" disabled selected>Select your state</option>
                     <option value="AL">Alabama</option>
@@ -113,34 +118,34 @@
             </div>
 
             <div class="mb-3">
-                <label for="zip" class="form-label">ZIP Code <span class="text-danger">*</span></label>
+                <label for="zip" class="form-label">ZIP Code:<span class="text-danger">*</span></label>
                 <input type="text" id="zip" name="zip" class="form-control" pattern="[0-9]{5}" title="Five digit zip code" required autocomplete="postal-code" placeholder="Eg: 90001">
             </div>
 
             <div class="mb-3">
-                <label for="phone" class="form-label">Telephone Number <span class="text-danger">*</span></label>
+                <label for="phone" class="form-label">Telephone Number:<span class="text-danger">*</span></label>
                 <input type="tel" id="phone" name="phone" class="form-control" pattern="\d{3}[-.\s]?\d{3}[-.\s]?\d{4}" title="Phone number format: 123-456-7890 or 123.456.7890" required autocomplete="phone" placeholder="Eg: 123-456-7890">
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+                <label for="email" class="form-label">E-mail:<span class="text-danger">*</span></label>
                 <input type="email" id="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@example.com)" required autocomplete="email" placeholder="Eg: hudutha@gmu.edu">
             </div>
 
             <div class="mb-3">
-                <label for="url" class="form-label">Website URL <span class="text-danger">*</span></label>
+                <label for="url" class="form-label">Website URL:<span class="text-danger">*</span></label>
                 <input type="url" id="url" name="url" class="form-control" required autocomplete="url" placeholder="Eg: https://www.gmu.edu/">
             </div>
 
             <div class="mb-3">
-                <label for="date" class="form-label">Date of Survey <span class="text-danger">*</span></label>
+                <label for="date" class="form-label">Date of Survey:<span class="text-danger">*</span></label>
                 <input type="date" id="date" name="date" class="form-control" required>
             </div>
 
-            <h3>What did you like most about the campus? <span class="text-danger">*</span></h3>
+            <h3>What did you like most about the campus?</h3>
             <div class="mb-3">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="liked[]" value="students" id="students">
+                    <input class="form-check-input" type="checkbox" name="liked[]" value="students" id="students" title="Please select one or more">
                     <label class="form-check-label" for="students">Students</label>
                 </div>
                 <div class="form-check">
@@ -191,7 +196,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="comments" class="form-label">Additional Comments</label>
+                <label for="comments" class="form-label">Additional Comments:</label>
                 <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Enter any additional comments or suggestions here..."></textarea>
             </div>
 
@@ -216,7 +221,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="graduation-year" class="form-label">Graduation Year:</label>
+                <label for="graduation-year" class="form-label">Graduation Year Of Your High School:</label>
                 <input type="number" id="graduation-year" name="graduation-year" class="form-control" min="1900" max="2100" required placeholder="YYYY">
             </div>
 
@@ -243,16 +248,19 @@
         <p>Unofficial Page by Harsha Udutha</p>
     </footer>
 
+    <!-- javascript to handle other option and submit -->
     <script>
-        // Get radio buttons and the other text box
+        // Get radio buttons and the other text elemebts
         const otherRadio = document.getElementById('other');
         const otherTextBox = document.getElementById('other-text');
         const radioButtons = document.querySelectorAll('input[name="interest"]');
         const form = document.querySelector('form');
     
         // Add event listener to the radio buttons to enable/disable the "Other" text box
-        radioButtons.forEach(radio => {
-            radio.addEventListener('change', function() {
+        radioButtons.forEach(radio => 
+        {
+            radio.addEventListener('change', function() 
+            {
                 if (otherRadio.checked) {
                     otherTextBox.disabled = false;  // Enable text box
                 } else {
@@ -263,8 +271,10 @@
         });
     
         // Add event listener to the form to validate the "Other" field before submission
-        form.addEventListener('submit', function(event) {
-            if (otherRadio.checked && otherTextBox.value.trim() === '') {
+        form.addEventListener('submit', function(event) 
+        {
+            if (otherRadio.checked && otherTextBox.value.trim() === '') // check if the other text box is empty
+            {
                 // If "Other" is selected but no text is entered, prevent form submission
                 event.preventDefault();
                 alert('Please specify how you became interested in the university if you selected "Other."');
@@ -272,7 +282,16 @@
         });
     </script>
 
+<!-- importing the darkmode script -->
 <script src="darkmode.js"></script>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+    // Preventing the form from submitting to test autocomplete logic
+    event.preventDefault();
+});
+
+</script>
 
 </body>
 </html>

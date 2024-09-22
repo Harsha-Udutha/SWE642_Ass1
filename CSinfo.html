@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--title-->
     <title>GMU - CS department</title>
 
     <!-- Favicon -->
@@ -11,6 +13,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- external CSS file -->
     <link rel="stylesheet" href="Style.css">
@@ -36,7 +39,7 @@
         <button id="darkModeToggle" class="btn gm-darkmode-btn" style="margin-left: 15px;">Dark Mode</button>
     </header>
 
-    <!-- Main Content Section -->
+    <!-- About the department section-->
     <div class="container mt-5">
         <section>
             <h3>About the Department</h3>
@@ -73,10 +76,10 @@
         </section>
 
 
-        <!-- MS Degree List Section -->
+        <!-- MS Degree List Section with required course -->
         <section>
             <h3>MS Degree Programs Offered with course requirement:
-                <button id="toggleAll" class="btn gm-toggle-btn ms-2">Expand All</button>
+                <button id="toggleTable" class="btn gm-toggle-btn ms-2">Expand All</button>
             </h3>
             </h3>
             <ul>
@@ -486,7 +489,7 @@
 
         
 
-        <!-- CS Advising Information Taken from the officaial website -->
+        <!-- CS Advising Information thats taken from the officaial website -->
 
         <section style="margin-bottom: 30px;"></section>
 
@@ -535,25 +538,21 @@
 
 
     <!-- Button for Survey at the top right corner -->
-<a href="Survey.html" class="btn gm-survey-btn position-absolute top-0 end-0 m-3">
-    Survey!
-</a>
-
-    
+    <a href="Survey.html" class="btn gm-survey-btn position-absolute top-0 end-0 m-3">
+        Survey!
+    </a>
 
     <!-- Footer Section -->
     <footer class="gm-footer text-center mt-5">
         <p>&copy; 2024 George Mason University | Computer Science Department</p>
         <p>Unofficial Page by Harsha Udutha</p>
     </footer>
-
-    <!-- Bootstrap JS (optional, for interactive components) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    
+    <!--javascript to handle expand and collapse functionality of the tables for each course -->
     <script>
-        document.getElementById("toggleAll").addEventListener("click", function() {
+        document.getElementById("toggleTable").addEventListener("click", function() {
             const collapsibleSections = document.querySelectorAll('.collapse');
-            const toggleButton = document.getElementById("toggleAll");
+            const toggleButton = document.getElementById("toggleTable");
             const allExpanded = [...collapsibleSections].every(section => section.classList.contains("show"));
     
             collapsibleSections.forEach(section => {
@@ -567,6 +566,8 @@
             });
         });
     </script>
+
+    <!-- javascript that handles the simple darkmode functionality -->
     <script src="darkmode.js"></script>
 
 </body>

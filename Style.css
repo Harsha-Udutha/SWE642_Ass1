@@ -1,122 +1,122 @@
-body {
-    background-color: #ffffff; /* light grey background */
+/* Default settings for body, header, logo and footer*/
+body 
+{
+    background-color: #ffffff;
     color: black;
 }
-
-.gm-header {
-    background-color: #006633 !important; /* Use !important to override Bootstrap */
+.gm-header 
+{
+    background-color: #006633;
     color: white;
     padding: 15px;
 }
-
-.gm-footer {
-    background-color: #ffcc33 !important; /* Use !important to override Bootstrap */
+.gm-footer 
+{
+    background-color: #ffcc33;
     color: black;
     padding: 10px;
 }
-
-.gm-table th, .gm-table td {
-    padding: 10px;
-    text-align: left; /* Ensures consistent left-alignment */
-    border: 1px solid #dee2e6; /* Adds border for better structure */
+.header-logo 
+{
+    max-height: 100px;
 }
 
+
+/* Default headings */
+h2, h3 
+{
+    color: #006633;
+}
+
+h1, h5 
+{
+    color: white;
+}
+
+
+/* required courses table styling, settings */
+.gm-table th, .gm-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #000000;
+}
 .gm-table th {
     background-color: #006633;
     color: white;
 }
-
 .gm-table td {
     background-color: #ffcc33;
 }
 
-h2, h3 {
-    color: #006633;
+/* required '*' styling in syrvey form */
+.required 
+{
+    color: red;
+    font-weight: bold;
 }
 
-h1, h5 {
-    color: white;
-}
 
-.header-logo {
-    max-height: 100px;
-}
-
-.required {
-    color: red; /* Change color to red */
-    font-weight: bold; /* Make it bold */
-}
-
+/* expand and collapse buton for the course tables */
 .gm-toggle-btn {
-    background-color: #006633; /* Green background like the header */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Add padding for size */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #006633;
+    color: white;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
-
 .gm-toggle-btn:hover {
-    background-color: #ffcc33; /* Darker green for hover effect */
+    background-color: #ffcc33;
+    color: #006633;
     cursor: pointer;
 }
 
-body.dark-mode h1, body.dark-mode h5 {
-    color: #ffcc33; /* Light color for dark mode */
-}
 
-body.dark-mode h2, body.dark-mode h3 {
-    color: #ffcc33; /* Slightly darker light color for these headings */
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #000000; /* Dark background */
-    color: #f0f0f0; /* Light text color */
-}
-
-.gm-header.dark-mode, .gm-footer.dark-mode {
-    background-color: #1a1a1a; /* Darker background for header and footer */
-    color: #f0f0f0;
-}
-
-.gm-table th.dark-mode {
-    background-color: #006633; /* Dark table headers */
-    color: #f0f0f0;
-}
-
-.gm-table td.dark-mode {
-    background-color: #ffcc33; /* Dark table cells */
-}
-
-/* Dark Mode for Toggle Button */
-.gm-darkmode-btn {
+/* Darkmode button styling */
+.gm-darkmode-btn 
+{
     background-color: #006633;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
 }
-
-.gm-darkmode-btn:hover {
-    background-color: #004d26;
+.gm-darkmode-btn:hover 
+{
+    background-color: #000000;
     cursor: pointer;
 }
 
-body.dark-mode .gm-footer {
-    background-color: #ffcc33 !important; /* Maintain the footer background color in dark mode */
-    color: black !important; /* Force footer text to remain black in dark mode */
+
+
+/* Darkmode Styling */
+body.dark-mode h1, body.dark-mode h5 
+{
+    color: #ffcc33;
 }
 
-.gm-survey-btn {
-    background-color: #ffcc33; /* Green background */
-    color: rgb(0, 0, 0); /* White text */
+body.dark-mode h2, body.dark-mode h3 
+{
+    color: #ffcc33;
+}
+body.dark-mode 
+{
+    background-color: #000000;
+    color: #f0f0f0;
+}
+
+
+/* survey button Settings */
+.gm-survey-btn 
+{
+    background-color: #ffcc33;
+    color: rgb(0, 0, 0);
     border: none;
-    font-size: 1.2rem; /* Adjust the font size */
+    font-size: 1.2rem;
     padding: 10px 20px;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
     text-decoration: none;
 }
-
-.gm-survey-btn:hover {
-    background-color: #008442; /* Darker green on hover */
+.gm-survey-btn:hover 
+{
+    background-color: #008442;
 }
