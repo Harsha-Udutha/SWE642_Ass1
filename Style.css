@@ -20,6 +20,14 @@ body
 {
     max-height: 100px;
 }
+.gm-box {
+    border: 5px solid #006633; /* Green border with 5px width */
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Custom box-shadow */
+    border-radius: 5px; /* Optional: To round the corners slightly */
+}
+
 
 
 /* Default headings */
