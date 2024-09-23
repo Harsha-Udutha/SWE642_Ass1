@@ -1,13 +1,22 @@
-Steps I used to deploy my website in Amazon servers {EC2 and S3}:
+Website Deployment on AWS
+here are the steps taken to deploy my website using Amazon Web Services (AWS) with S3 and EC2.
 
-I went to the aws login page, created a account and gave in my credit card details.
+AWS Account Setup
+Account Creation: I logged into the AWS login page, created a new account, and provided my credit card details for verification.\
 
+S3 Server Setup:~
 
-S3 Server:
-in the dashboard, created a new bucket named 'harudu'.
-then drag and dropped the files that needed for the websites and uploaded them.
-then I eneabled the static website hosting under the properties tab and enabled 'use this bucket to host a website', set home.html as the hosting page. saved these changes.
-had to change permissions as images werent loading in the website using this .json text in the Bucket policy.
+Create a Bucket:
+In the AWS Management Console, I created a new bucket named harudu.
+
+Upload Files:
+I dragged and dropped the necessary files for the website into the bucket.
+
+Enable Static Website Hosting:
+Under the Properties tab, I enabled static website hosting, selecting Home.html as the hosting page, and saved the changes.
+Set Bucket Policy:
+
+To resolve issues with images not loading, I updated the bucket policy with the following JSON:
 
 {
     "Version": "2012-10-17",
@@ -20,40 +29,64 @@ had to change permissions as images werent loading in the website using this .js
         }
     ]
 }
+Access the Website:
 
-then copied this url "https://harudu.s3.us-east-2.amazonaws.com/Assignment1/Home.html" and accessed it, everything works.
+I copied the URL https://harudu.s3.us-east-2.amazonaws.com/Assignment1/index.html and verified that everything was functioning correctly.
+EC2 Server Setup
+Launch an Instance:
+
+I selected EC2 from the AWS services, launched an instance named harudu, and generated a key pair with the default operating system.
+Connect to the Instance:
+
+After the instance passed the status checks, I copied the public IP from the EC2 dashboard and connected to the instance using EC2 Instance Connect.
+Terminal Access:
+
+Once connected, I switched to the root user for elevated permissions using the command:
+bash
+Copy code
+sudo su -
+Folder Creation:
+
+I created a directory for my assignment:
+bash
+Copy code
+mkdir -p /var/www/html/swe642/assignment1
+Download Assignment Files:
+
+I uploaded my assignment to GitHub and used the following commands to download and extract it:
+bash
+Copy code
+wget https://github.com/Harsha-Udutha/SWE642_Ass1/archive/refs/heads/main.zip
+unzip main.zip
+cd SWE642_Ass1-main/
+Move Files to Web Directory:
+
+I moved the contents to the web directory:
+bash
+Copy code
+mv * /var/www/html/
+Configure Inbound Rules:
+
+In the security settings, I added two new inbound rules for HTTP and HTTPS to allow traffic from anywhere (IPv4).
+Access the Website:
+
+I used the public IP of the instance (3.14.3.185) to access the deployed web pages.
 
 
+Accessing the webpages:
 
-EC2 server:
-slected EC2 in services,
-launched an instance, gave it a name 'harudu31'
-generated a key pair, with the deafault operating system.
-I copied the public ip that was in the details below in the EC2 dashboard.
-and then connected to the instance after the status check was done using EC2 instance connect.
-after the connection was established i was in the terminal.
-then I used these following commands:
+Link 1: Hosted on AWS Linux Cloud using EC2:
+IP: 3.14.3.185
 
-sudo su -, to switch to root user and give me permissions.
+Please paste the above IP in the brower's address bar to access the webpages.
 
-I created a folder called swe642/assignment1. I also uploaded my assignment into github.
+Link 2: Hosted on AWS S3:
+https://harudu.s3.us-east-2.amazonaws.com/Assignment1/index.html
 
-so in the assignment1 folder I used the following commands:
+Please paste the above link in the browser's address bar to access the websites.
 
-# wget https://github.com/Harsha-Udutha/SWE642_Ass1.git
 
-then,  wget https://github.com/Harsha-Udutha/SWE642_Ass1/archive/refs/heads/main.zip to download the assignment.
+For GMU's CS department Page, please scroll down in the student's page, and click on the highlighted CS department link.
+For Survey Page, please scroll down in the student's page, and click on the highlighted survey link or please click on the survey button in the CS department page on the top right to the page.
 
-unzip main.zip command to extract the contents
-
-# cd SWE642_Ass1-main/ used this command to get into the folder
-
-SWE642_Ass1-main  SWE642_Ass1.git  main.zip
-[root@ip-172-31-39-60 Assignment1]# cd SWE642_Ass1-main/
-[root@ip-172-31-39-60 SWE642_Ass1-main]# ^C
-[root@ip-172-31-39-60 SWE642_Ass1-main]# ls
-CSinfo.html  DP.png  DP1.png  Home.html  Style.css  Survey.html  darkmode.js  gmu-logo.jpg
-[root@ip-172-31-39-60 SWE642_Ass1-main]# 
-
-extracted
-
+Thankyou!
