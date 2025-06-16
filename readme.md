@@ -89,4 +89,7 @@ Please paste the above link in the browser's address bar to access the websites.
 For GMU's CS department Page, please scroll down in the student's page, and click on the highlighted CS department link.
 For Survey Page, please scroll down in the student's page, and click on the highlighted survey link or please click on the survey button in the CS department page on the top right to the page.
 
+
+NOTE: THE URLs ARE NOT CURRENTLY WORKING, PLEASE FORK OR DOWNLOAD THE PROJECT AND RUN LOCALLY
+
 Thankyou!
